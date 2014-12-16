@@ -1,4 +1,4 @@
-package com.luckypines.android.myapplication;
+package com.luckypines.android.myapplication.test;
 
 
 import android.widget.Button;
