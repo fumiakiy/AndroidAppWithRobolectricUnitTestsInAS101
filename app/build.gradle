@@ -60,4 +60,5 @@ dependencies {
         exclude module: 'wagon-provider-api'
     }
     androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
-    }
+    androidTestCompile project.files("$project.buildDir/intermediates/exploded-aar/com.squareup.assertj/assertj-android/1.0.0/classes.jar")
+}
