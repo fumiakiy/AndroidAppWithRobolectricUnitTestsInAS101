@@ -4,7 +4,10 @@ package com.luckypines.android.myapplication.test;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.assertj.android.api.Assertions;
+import com.luckypines.android.myapplication.MainActivity;
+import com.luckypines.android.myapplication.R;
+
+import org.assertj.core.api.Assertions;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,7 +28,7 @@ public class ApplicationTest {
     public void defaultTextViewHasHelloWorld() throws Exception {
         MainActivity mainActivity = Robolectric.buildActivity(MainActivity.class).create().start().resume().get();
         TextView textView1 = (TextView)mainActivity.findViewById(R.id.textView1);
-        Assertions.assertThat(textView1).hasText(R.string.hello_world);
+        Assertions.assertThat(textView1.getText()).isEqualTo(mainActivity.getString(R.string.hello_world));
     }
 
     public void clickingButtonChangesText() throws Exception {
@@ -33,6 +36,6 @@ public class ApplicationTest {
         Button button1 = (Button)mainActivity.findViewById(R.id.button1);
         button1.performClick();
         TextView textView1 = (TextView)mainActivity.findViewById(R.id.textView1);
-        Assertions.assertThat(textView1).hasText(R.string.nice_click);
+        Assertions.assertThat(textView1.getText()).isEqualTo(mainActivity.getString(R.string.nice_click));
     }
 }
