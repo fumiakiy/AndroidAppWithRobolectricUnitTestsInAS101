@@ -17,7 +17,7 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(emulateSdk = 18, libraries = {"../../build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3"})
+@Config(emulateSdk = 18, libraries = {"../../build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3"}, manifest = "../app/src/main/AndroidManifest.xml")
 public class ApplicationTest {
     @Test
     public void shouldHaveApplicationName() throws Exception {
