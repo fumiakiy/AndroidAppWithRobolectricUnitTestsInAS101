@@ -1,6 +1,7 @@
 package com.luckypines.android.myapplication;
 
 
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.assertj.android.api.Assertions;
@@ -25,5 +26,13 @@ public class ApplicationTest {
         MainActivity mainActivity = Robolectric.buildActivity(MainActivity.class).create().start().resume().get();
         TextView textView1 = (TextView)mainActivity.findViewById(R.id.textView1);
         Assertions.assertThat(textView1).hasText(R.string.hello_world);
+    }
+
+    public void clickingButtonChangesText() throws Exception {
+        MainActivity mainActivity = Robolectric.buildActivity(MainActivity.class).create().start().resume().get();
+        Button button1 = (Button)mainActivity.findViewById(R.id.button1);
+        button1.performClick();
+        TextView textView1 = (TextView)mainActivity.findViewById(R.id.textView1);
+        Assertions.assertThat(textView1).hasText(R.string.nice_click);
     }
 }
