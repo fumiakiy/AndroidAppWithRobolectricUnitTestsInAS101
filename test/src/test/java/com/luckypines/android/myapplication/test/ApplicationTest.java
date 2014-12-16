@@ -40,9 +40,4 @@ public class ApplicationTest {
         TextView textView1 = (TextView)mainActivity.findViewById(R.id.textView1);
         Assertions.assertThat(textView1.getText()).isEqualTo(mainActivity.getString(R.string.nice_click));
     }
-
-    @Test
-    public void fails() throws Exception {
-        Assert.fail();
-    }
 }
