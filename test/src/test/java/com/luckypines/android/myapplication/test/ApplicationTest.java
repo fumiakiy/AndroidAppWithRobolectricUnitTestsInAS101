@@ -25,12 +25,14 @@ public class ApplicationTest {
         Assert.assertThat(appName, CoreMatchers.equalTo("My Application"));
     }
 
+    @Test
     public void defaultTextViewHasHelloWorld() throws Exception {
         MainActivity mainActivity = Robolectric.buildActivity(MainActivity.class).create().start().resume().get();
         TextView textView1 = (TextView)mainActivity.findViewById(R.id.textView1);
         Assertions.assertThat(textView1.getText()).isEqualTo(mainActivity.getString(R.string.hello_world));
     }
 
+    @Test
     public void clickingButtonChangesText() throws Exception {
         MainActivity mainActivity = Robolectric.buildActivity(MainActivity.class).create().start().resume().get();
         Button button1 = (Button)mainActivity.findViewById(R.id.button1);
